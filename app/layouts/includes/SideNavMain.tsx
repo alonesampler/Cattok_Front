@@ -2,20 +2,14 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import MenuItem from "./MenuItem"
 import MenuItemFollow from "./MenuItemFollow"
-import { useEffect } from "react"
 import ClientOnly from "@/app/components/ClientOnly"
-// import { useUser } from "@/app/context/user"
-// import ClientOnly from "@/app/components/ClientOnly"
-// import { useGeneralStore } from "@/app/stores/general"
+
 
 export default function SideNavMain() {
 
-    // let { setRandomUsers, randomUsers} = useGeneralStore()
 
-    // const contextUser = useUser()
     const pathname = usePathname()
 
-    // useEffect(() => { setRandomUsers() }, [])
     return (
         <>
             <div 
@@ -71,10 +65,12 @@ export default function SideNavMain() {
                     <div className="lg:block hidden border-b lg:ml-2 mt-2" />
 
                     <div className="lg:block hidden text-[11px] text-gray-500">
-                        <p className="pt-4 px-2">About Newsroom CatTok Shop Contact Careers ByteDance</p>
-                        <p className="pt-4 px-2">TikTok for Good Advertise Developers Transparency CatTok Rewards CatTok Browse CatTok Embeds</p>
-                        <p className="pt-4 px-2">Help Safety Terms Privacy Creator Portal Community Guidelines</p>
-                        <p className="pt-4 px-2">© 2024 CaTTok</p>
+                        <Link href="/about">
+                            <p className="pt-4 px-2">About Newsroom Contact Careers ByteDance</p>{/* подумать что от сюда нужно убрать и сделать из них ссылки не меняя структуру верстки */}
+                            <p className="pt-4 px-2">TikTok for Good Advertise Developers Transparency CatTok Rewards CatTok Browse CatTok Embeds</p>{/* подумать что от сюда нужно убрать и сделать из них ссылки не меняя структуру верстки */}
+                            <p className="pt-4 px-2">Help Safety Terms Privacy Creator Portal Community Guidelines</p>{/* подумать что от сюда нужно убрать и сделать из них ссылки не меняя структуру верстки */}
+                            <p className="pt-4 px-2">© 2024 CaTTok</p> {/* подумать что от сюда нужно убрать и сделать из них ссылки не меняя структуру верстки */}
+                        </Link>
                     </div>
 
                     <div className="pb-14"></div>
